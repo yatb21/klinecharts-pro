@@ -232,6 +232,19 @@ const ChartProComponent: Component<ChartProComponentProps> = props => {
       priceUnitContainer?.appendChild(priceUnitDom)
     }
 
+
+    // Force transparent/black backgrounds for custom overlay shapes
+    widget?.setStyles({
+      overlay: {
+        polygon: {
+          color: 'transparent'
+        },
+        rect: {
+          color: 'transparent',
+          borderColor: 'transparent'
+        }
+      }
+    })
     mainIndicators().forEach(indicator => {
       createIndicator(widget, indicator, true, { id: 'candle_pane' })
     })

@@ -1,0 +1,13 @@
+/* Force black backgrounds for custom overlays (orderMarker, gridLine) */
+/* This overrides klinecharts theme colors for custom overlay rectangles */
+
+/* Target overlay canvas elements - but canvas styling won't work */
+/* Instead, we need to override at the klinecharts level via setStyles */
+
+/* Alternative: Add a post-init style injection */
+.klinecharts-pro[data-theme='dark'] canvas {
+  /* Cannot style canvas content with CSS */
+}
+
+/* The real fix is in the initialization code, not CSS */
+/* Canvas rendering is done programmatically, not via CSS */
